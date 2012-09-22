@@ -1,0 +1,47 @@
+body {
+    margin-top: 100px;
+
+    font-family: "Orienta";
+    font-size: 2.5rem;
+
+    background-image: url('../img/dust.png');
+
+    cursor: default;
+
+    color: #444;
+}
+
+.left  { float: left;  }
+.right { float: right; }
+
+.add-bottom  { margin-bottom: 100px; }
+.half-bottom { margin-bottom: 50px;  }
+
+.text-center { text-align: center; }
+
+small { font-size: 0.5em; opacity: 0.5; }
+
+input {
+    float: left;
+    width: 100%; height: 50px;
+    margin: 0px; padding: 0px 0px;
+    border: 0px;
+    border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px;
+
+    opacity: 0.5;
+
+    font-size: 1rem;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: #32cd32;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reply { font-size: 0.5em; }
+.reply input { height: 40px; opacity: 0.1; }
+.reply input[type="submit"] { display: none; }

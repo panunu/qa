@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+   Kysymyksiä (ja vastauksia)
+{% endblock %}
+
+{% block content %}
+
+    {% include 'post.html.twig' %}
+
+    {% for key, post in posts|reverse %}
+        <div class="row">
+            <div class="two columns alpha text-center">
+                <i class="icon-bullhorn icon-large"></i>
+            </div>
+
+            <div class="fourteen columns omega half-bottom">
+                {{ post.value }}<br>
+                <small class="left half-bottom">{{ post.timestamp }}</small>
+
+                {% for reply in post.replies %}
+                    <div class="row reply">
+                        <div class="fourteen columns alpha omega">
+                            {{ reply.value }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row reply">
+                    <div class="fourteen columns alpha omega">
+                        {% include 'reply.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
