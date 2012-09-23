@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-   Kysymyksiä (ja vastauksia)
+   Kysymyksiä ja vastauksia - Ohjelmistotuotanto
 {% endblock %}
 
 {% block content %}
@@ -34,5 +34,11 @@
             </div>
         </div>
     {% endfor %}
+
+    {% if refresh is defined %}
+        <script type="text/javascript">
+            setTimeout(function() { location.reload(true); }, 20 * 1000);
+        </script>
+    {% endif %}
 
 {% endblock %}

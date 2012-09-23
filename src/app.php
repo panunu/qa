@@ -13,6 +13,15 @@ $app->get('/', function() use($app) {
     ));
 });
 
+$app->get('/channel/', function() use($app) { // TODO: Ugly implementation, against DRY, please fix.
+    $posts = $app['service.post']->all();
+
+    return $app['twig']->render('list.html.twig', array(
+        'posts' => $posts['values'],
+        'refresh' => true
+    ));
+});
+
 $app->get('/post/', function(Request $request) use($app) {
     $app['service.post']->post($request);
 
